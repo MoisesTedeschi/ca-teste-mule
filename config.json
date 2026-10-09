@@ -1,0 +1,61 @@
+{
+  "workflowApiVersion": "1.1",
+  "metaData": {
+    "icon": "icon.png",
+    "category": "custom"
+  },
+  "type": "REST",
+  "lang": {
+    "en-US": {
+      "name": "ca-teste-mule",
+      "description": "Envia campos da DE para a API (Mule) e devolve status para Decision Split."
+    }
+  },
+  "arguments": {
+    "execute": {
+      "inArguments": [],
+      "outArguments": [
+        { "status": "" },
+        { "messageId": "" },
+        { "motivo": "" }
+      ],
+      "url": "https://TROQUE-PELA-URL-DO-MOCK-OU-MULE/sfmc/execute",
+      "verb": "POST",
+      "format": "json",
+      "useJwt": true,
+      "timeout": 30000,
+      "retryCount": 0,
+      "retryDelay": 1000,
+      "concurrentRequests": 2
+    }
+  },
+  "configurationArguments": {
+    "applicationExtensionKey": "fb722101-a293-43b7-b4d1-b503f125e75e",
+    "save":     { "url": "https://TROQUE-PELA-URL-DO-MOCK-OU-MULE/sfmc/save",     "verb": "POST", "useJwt": true },
+    "publish":  { "url": "https://TROQUE-PELA-URL-DO-MOCK-OU-MULE/sfmc/publish",  "verb": "POST", "useJwt": true },
+    "validate": { "url": "https://TROQUE-PELA-URL-DO-MOCK-OU-MULE/sfmc/validate", "verb": "POST", "useJwt": true },
+    "stop":     { "url": "https://TROQUE-PELA-URL-DO-MOCK-OU-MULE/sfmc/stop",     "verb": "POST", "useJwt": true }
+  },
+  "wizardSteps": [
+    { "label": "Mapear campos", "key": "step1" }
+  ],
+  "userInterfaces": {
+    "configModal": {
+      "height": 520,
+      "width": 680,
+      "fullscreen": false
+    }
+  },
+  "schema": {
+    "arguments": {
+      "execute": {
+        "inArguments": [],
+        "outArguments": [
+          { "status":    { "dataType": "Text", "isNullable": false, "direction": "out", "access": "visible" } },
+          { "messageId": { "dataType": "Text", "isNullable": false, "direction": "out", "access": "visible" } },
+          { "motivo":    { "dataType": "Text", "isNullable": false, "direction": "out", "access": "visible" } }
+        ]
+      }
+    }
+  }
+}

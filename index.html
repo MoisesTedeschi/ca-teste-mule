@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <title>ca-teste-mule</title>
+  <style>
+    body {
+      font-family: "Salesforce Sans", Arial, sans-serif;
+      font-size: 14px;
+      color: #181818;
+      margin: 16px;
+    }
+
+    h1 {
+      font-size: 16px;
+      margin: 0 0 4px;
+    }
+
+    .sub {
+      color: #5c5c5c;
+      margin: 0 0 16px;
+    }
+
+    .campo {
+      margin-bottom: 14px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .obrig {
+      color: #ba0517;
+    }
+
+    select {
+      width: 100%;
+      padding: 6px;
+      font: inherit;
+      border: 1px solid #c9c9c9;
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .ajuda {
+      font-size: 12px;
+      color: #5c5c5c;
+      margin-top: 3px;
+    }
+
+    .box {
+      border: 1px solid #c9c9c9;
+      border-radius: 4px;
+      padding: 10px;
+      margin-top: 12px;
+      background: #f3f3f3;
+    }
+
+    .ok {
+      color: #2e844a;
+    }
+
+    .erro {
+      color: #ba0517;
+    }
+
+    button {
+      font: inherit;
+      padding: 5px 12px;
+      border: 1px solid #0176d3;
+      background: #fff;
+      color: #0176d3;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    code {
+      background: #f3f3f3;
+      padding: 1px 4px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>ca-teste-mule</h1>
+  <p class="sub">Escolha quais campos da DE de entrada vão na requisição. O resultado volta em
+    <code>status</code> (<code>sucesso</code> ou <code>erro</code>) para usar no Decision Split.
+  </p>
+
+  <div class="campo">
+    <label for="selTelefone">Telefone <span class="obrig">*</span></label>
+    <select id="selTelefone">
+      <option value="">Carregando campos da DE…</option>
+    </select>
+    <div class="ajuda">Enviado como <code>telefone</code>. Formato esperado: 55 + DDD + número.</div>
+  </div>
+
+  <div class="campo">
+    <label for="selMensagem">Mensagem <span class="obrig">*</span></label>
+    <select id="selMensagem">
+      <option value="">Carregando campos da DE…</option>
+    </select>
+    <div class="ajuda">Enviado como <code>mensagem</code>.</div>
+  </div>
+
+  <div class="campo">
+    <label for="selCanal">Canal <span class="obrig">*</span></label>
+    <select id="selCanal">
+      <option value="SMS">SMS</option>
+      <option value="PUSH">Push</option>
+    </select>
+    <div class="ajuda">Valor fixo para todos os contatos desta activity. Enviado como <code>canal</code>.</div>
+  </div>
+
+  <div class="box">
+    <div id="msgValidacao">Selecione os campos obrigatórios para liberar o <b>Done</b>.</div>
+  </div>
+
+  <div class="box">
+    <button id="btnHealth" type="button">Acordar / testar API</button>
+    <span id="resHealth"></span>
+    <div class="ajuda">Faz um GET em <code>/health</code> da API configurada no <code>config.json</code>.
+      No Render gratuito, use antes de ativar a jornada.</div>
+  </div>
+
+  <script src="postmonger.js"></script>
+  <script src="customActivity.js"></script>
+</body>
+
+</html>
