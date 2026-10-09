@@ -19,7 +19,7 @@
         { "messageId": "" },
         { "motivo": "" }
       ],
-      "url": "https://TROQUE-PELA-URL-DO-MOCK-OU-MULE/sfmc/execute",
+      "url": "https://mock-mule-ca-teste.onrender.com/sfmc/execute",
       "verb": "POST",
       "format": "json",
       "useJwt": true,
@@ -31,10 +31,10 @@
   },
   "configurationArguments": {
     "applicationExtensionKey": "fb722101-a293-43b7-b4d1-b503f125e75e",
-    "save":     { "url": "https://TROQUE-PELA-URL-DO-MOCK-OU-MULE/sfmc/save",     "verb": "POST", "useJwt": true },
-    "publish":  { "url": "https://TROQUE-PELA-URL-DO-MOCK-OU-MULE/sfmc/publish",  "verb": "POST", "useJwt": true },
-    "validate": { "url": "https://TROQUE-PELA-URL-DO-MOCK-OU-MULE/sfmc/validate", "verb": "POST", "useJwt": true },
-    "stop":     { "url": "https://TROQUE-PELA-URL-DO-MOCK-OU-MULE/sfmc/stop",     "verb": "POST", "useJwt": true }
+    "save":     { "url": "https://mock-mule-ca-teste.onrender.com/sfmc/save",     "verb": "POST", "useJwt": true },
+    "publish":  { "url": "https://mock-mule-ca-teste.onrender.com/sfmc/publish",  "verb": "POST", "useJwt": true },
+    "validate": { "url": "https://mock-mule-ca-teste.onrender.com/sfmc/validate", "verb": "POST", "useJwt": true },
+    "stop":     { "url": "https://mock-mule-ca-teste.onrender.com/sfmc/stop",     "verb": "POST", "useJwt": true }
   },
   "wizardSteps": [
     { "label": "Mapear campos", "key": "step1" }
